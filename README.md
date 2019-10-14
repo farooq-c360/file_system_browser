@@ -1,13 +1,11 @@
 # [BROWSER - nodejs - react]
 
-
-
-![version](https://img.shields.io/badge/version-1.8.0-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/material-dashboard-react.svg?maxAge=2592000)]() [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/material-dashboard-react.svg?maxAge=2592000)]() [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim/material-dashboard?utm_source=share-link&utm_medium=link&utm_campaign=share-link) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
-
 ![Product Gif](/assets/product.png)
 
 Browser is small util that lets you browse your file systems over the web, it also allows you quickly access folders that
 are most frequtly used through recent, faviourte and bookmark feature. System also allows to add new folders.
+
+This is to demonstrate my learning of nodejs, react and NOSQL over the past week or so!
 
 
 Used Packages:
