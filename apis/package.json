@@ -8,7 +8,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "web-app": "npm run start --prefix ../web-app",
-    "dev": "concurrently \"npm run server\" \"npm run web-app\""
+    "dev": "concurrently \"npm run server\" \"npm run web-app\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
   },
   "jest": {
     "testEnvironment": "node",
