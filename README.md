@@ -15,7 +15,15 @@ Used Packages:
 + [mongoose](https://www.npmjs.com/package/mongoose)
 + [jset](https://www.npmjs.com/package/jest)
 
+PREREQUISITE
+1. nodejs
+2. react
+3. mongo db
+
 HOW TO SETUP (Mac OS -> IN TERMINAL WINDOW)
 1. git clone https://github.com/farooq-c360/file_system_browser.git
-2. cd server
-3. npm run dev
+2. cd web-app
+3. npm install
+4. cd ../server
+5. npm install
+6. npm run dev
