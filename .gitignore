@@ -1,4 +1,9 @@
+.DS_Store
+ apis/.DS_Store
+ web-app/.DS_Store
 
+/apis/node_modules
+/web-app/node_modules
 
 #production
 /bulid

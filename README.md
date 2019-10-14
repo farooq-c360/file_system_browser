@@ -1,6 +1,16 @@
 # [BROWSER - nodejs - react]
 
+HOME
 ![Product Gif](/assets/product.png)
+
+RECENT ACCESSED FOLDERS
+![Recent Gif](/assets/recent.png)
+
+MOST FREQUENTLY USED FOLDERS
+![Favourite Gif](/assets/favourite.png)
+
+BOOKMARKED FOLDERS
+![Boomkarked Gif](/assets/bookmark.png)
 
 Browser is small util that lets you browse your file systems over the web, it also allows you quickly access folders that
 are most frequtly used through recent, faviourte and bookmark feature. System also allows to add new folders.
