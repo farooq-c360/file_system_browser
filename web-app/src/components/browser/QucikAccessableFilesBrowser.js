@@ -1,31 +1,27 @@
-import React, { useEffect } from "react";
-import Moment from 'react-moment';
-import PropTypes from "prop-types";
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import Icon from "@material-ui/core/Icon";
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import Icon from '@material-ui/core/Icon';
 import { connect } from 'react-redux';
 import {ListAllRecent, ClearState} from '../../actions/recent.js';
 import {ListAllBookmarks} from '../../actions/bookmark.js';
 import { bindActionCreators } from 'redux';
 
 // core components
-import styles from "../../assets/jss/material-dashboard-react/components/tableStyle.js";
-import { Link } from "@material-ui/core";
-import { stat } from "fs";
+import styles from '../../assets/jss/material-dashboard-react/components/tableStyle.js';
+import { Link } from '@material-ui/core';
 
 const useStyles = makeStyles(styles);
 
 function QuickAccessableFileBrowser(props) {
   useEffect(() => {
     //TODO user from session
-    console.log('listRecent->in use effect');
-    console.log(props.path);
     if(props.path === '/admin/bookmarks')
     {
       props.ListAllBookmarks('5d9ec846bbf735c6917f737b');
@@ -41,18 +37,17 @@ function QuickAccessableFileBrowser(props) {
   const classes = useStyles();
   const { tableHead, tableHeaderColor, bookmark, recent } = props;
   const results = recent.recent ? recent.recent : bookmark.recent;
-  let iconType = null;
  
   return (
-    <div className={classes.tableResponsive}>
+    <div style={{marginTop:'50px'}} className={classes.tableResponsive}>
       <Table className={classes.table}>
         {tableHead !== undefined ? (
-          <TableHead className={classes[tableHeaderColor + "TableHeader"]}>
+          <TableHead className={classes[tableHeaderColor + 'TableHeader']}>
             <TableRow className={classes.tableHeadRow}>
               {tableHead.map((prop, key) => {
                 return (
                   <TableCell
-                    className={classes.tableCell + " " + classes.tableHeadCell}
+                    className={classes.tableCell + ' ' + classes.tableHeadCell}
                     key={key}
                   >
                     {prop}
@@ -65,15 +60,12 @@ function QuickAccessableFileBrowser(props) {
         <TableBody>
           {
             results && results.length > 0 ? (results.map((prop, key) => {
-              console.log('rendering' + recent);
-              let rowProp = prop.Name;
-              console.log(prop);
               return (
                 <TableRow key={key} className={classes.tableBodyRow}>
                   <TableCell className={classes.tableCell} key={key}>
                       {
                         (<Link href={'/admin/browser/home/' + encodeURIComponent(prop.PATH)}>
-                        <Icon className="material-icons-outlined">{prop.Icon}</Icon></Link>)
+                        <Icon className='material-icons-outlined'>{prop.Icon}</Icon></Link>)
                       }
                   </TableCell>
                   <TableCell>
@@ -101,18 +93,18 @@ function mapDispatchToProps(dispatch) {
 export default connect(mapStateToProps, mapDispatchToProps)(QuickAccessableFileBrowser);
 
 QuickAccessableFileBrowser.defaultProps = {
-  tableHeaderColor: "gray"
+  tableHeaderColor: 'gray'
 };
 
 QuickAccessableFileBrowser.propTypes = {
   tableHeaderColor: PropTypes.oneOf([
-    "warning",
-    "primary",
-    "danger",
-    "success",
-    "info",
-    "rose",
-    "gray"
+    'warning',
+    'primary',
+    'danger',
+    'success',
+    'info',
+    'rose',
+    'gray'
   ]),
   tableHead: PropTypes.arrayOf(PropTypes.string),
   tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))

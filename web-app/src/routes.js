@@ -16,26 +16,15 @@
 
 */
 // @material-ui/icons
-import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Dns";
 import History from "@material-ui/icons/History";
 import Stars from "@material-ui/icons/Stars";
 import Favourite from "@material-ui/icons/FavoriteBorder";
 // core components/views for Admin layout
-import DashboardPage from "views/dashboard/dashboard.js";
 import FileSystemBrowser from "views/browser/home.js";
 import QuickAccessFileBrowser from "views/browser/browse_quick_accessable_files.js";
 
 const dashboardRoutes = [
-  {
-    path: "/dashboard",
-    params: "",
-    name: "Dashboard",
-    rtlName: "لوحة القيادة",
-    icon: Dashboard,
-    component: DashboardPage,
-    layout: "/admin"
-  },
   {
     path: "/browser/home",
     params: "/:folder",
@@ -57,7 +46,7 @@ const dashboardRoutes = [
   {
     path: "/favourite",
     params: "",
-    name: "favourite",
+    name: "Favourite",
     rtlName: "طباعة",
     icon: Favourite,
     component: QuickAccessFileBrowser,

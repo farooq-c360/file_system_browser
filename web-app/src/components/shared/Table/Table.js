@@ -35,9 +35,7 @@ function CustomTable(props) {
   const classes = useStyles();
   const { tableHead, tableHeaderColor, files } = props;
   let iconType = null;
-  console.log('in Custom table');
-  console.log(props);
-  debugger;
+
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -60,7 +58,6 @@ function CustomTable(props) {
         <TableBody>
           {
             files.files && files.files.length > 0 ? (files.files.map((prop, key) => {
-              console.log('rendering');
               let rowProp = prop.Name;
               return (
                 <TableRow key={key} className={classes.tableBodyRow}>
@@ -72,7 +69,7 @@ function CustomTable(props) {
                         {
                           (prop[0] === "Icon" ? 
                             (prop[1] === "folder") ? 
-                              (<Link folderName={rowProp} onClick={() => rowClickHandler(rowProp)}><Icon className="material-icons-outlined">{prop[1]}</Icon></Link>) :
+                              (<Link onClick={() => rowClickHandler(rowProp)}><Icon className="material-icons-outlined">{prop[1]}</Icon></Link>) :
                               (<Icon className="material-icons-outlined">{prop[1]}</Icon>) :
                             (prop[0] == "LastChanged") ? 
                               (<Moment fromNow>{prop[1]}</Moment>) :
@@ -95,8 +92,6 @@ function CustomTable(props) {
 
 
 function mapStateToProps(state) {
-  console.log('in mapStateToProps');
-  console.log(state.files);
   return {
     files: state.files
   }

@@ -5,10 +5,9 @@ export function ListAllBookmarks(user) {
     const request =  axios.get(
         config.get(process.env.NODE_ENV).API_URLS.BOOKMARK.LIST + user,
       ).then(result =>  {
-          console.log('boomark action');
           var mData = result.data.map(d => {
               var dItem = {
-                'Icon' : "folder",
+                'Icon' : 'folder',
                 'PATH' : d.path
               };
               return dItem;
@@ -27,8 +26,10 @@ export function AddBookmark(user, folder) {
     const request =  axios.post(
         config.get(process.env.NODE_ENV).API_URLS.BOOKMARK.ADD, { user, folder }
       ).then(result =>  {
-          console.log(result);
-          return result;
+          return {
+            type: 'ADD_BOOKMARK',
+            payload: result
+        };
       });
     
     return {

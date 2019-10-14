@@ -11,6 +11,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Icon from "@material-ui/core/Icon";
+import FolderOpenSharpIcon from '@material-ui/icons/FolderOpenSharp';
 // core components
 import AdminNavbarLinks from "../Navbars/AdminNavbarLinks.js";
 import RTLNavbarLinks from "../Navbars/RTLNavbarLinks.js";
@@ -83,13 +84,16 @@ export default function Sidebar(props) {
   var brand = (
     <div className={classes.logo}>
       <a
+        style={{color: '#ff9800'}}
         href="#"
         className={classNames(classes.logoLink, {
           [classes.logoLinkRTL]: props.rtlActive
         })}
       >
         <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
+        <FolderOpenSharpIcon style={{verticalAlign: 'middle'}}>
+          
+        </FolderOpenSharpIcon>
         </div>
         {logoText}
       </a>
